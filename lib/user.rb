@@ -19,11 +19,10 @@ class User
     end
   end
 
-  def learn_routine('../jokes.csv')
-    CSV.foreach('../jokes.csv', :headers => true) do |row|
-      learn(row)
-    end
-  end
+#  def learn_routine('../jokes.csv')
+#    CSV.foreach('../jokes.csv', :headers => true) do |row|
+#      learn(row)
+#  end
 
   def tell(user, joke)
     user.learn(joke)

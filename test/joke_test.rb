@@ -5,6 +5,9 @@ require_relative '../lib/joke'
 
 class JokeTest < Minitest::Test
 
+  def setup
+    @joke = Joke.new({id: 1, question: "Why did the strawberry cross the road?", answer: "Because his mother was in a jam."})
+  end
 
   def test_it_exists
     joke = Joke.new({id: 1, question: "Why did the strawberry cross the road?", answer: "Because his mother was in a jam."})
