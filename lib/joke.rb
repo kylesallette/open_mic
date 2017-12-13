@@ -1,28 +1,17 @@
 require 'csv'
+require 'pry'
+require_relative 'user'
 
 class Joke
 
+  attr_reader :answer,
+              :question,
+              :id
 
-
-  def initialize
-  #  sorry, failed horribly.
-  end
-
-
-
-  def joke_finder
-
-  id = {}
-
-  CSV.foreach("../jokes.csv", :headers => true, :header_converters => :symbol, :converters => :all) do |row|
-    id[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
-
-    p id[1]
-    end
+  def initialize(joke)
+    @question =  joke[:question]
+    @answer = joke[:answer]
+    @id = joke[:id]
   end
 
 end
-
-
-   joke = Joke.new
-   joke.joke_finder
